@@ -1,0 +1,51 @@
+.nav {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.navLink {
+    padding: 14px 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lineUnderNavLink {
+    position: relative;
+    top: 14.3px;
+    margin-top: -3px;
+    height: 3px;
+    width: 100%;
+    background-color: var(--main-color);
+    border-radius: 100px;
+    border: none;
+}
+
+.active {
+    color: var(--main-color);
+    cursor: default;
+}
+
+.navLink:hover {
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 912px) {
+    .nav {
+        display: none;
+        flex-direction: column;
+        gap: 6vh;
+        transition: gap 0.3s ease-in-out;
+    }
+
+    .navLink {
+        font-size: 5vw;
+        transition: font-size 0.3s ease-in-out;
+        color: #fff;
+    }
+
+    .lineUnderNavLink {
+        background-color: #fff;
+    }    
+}
