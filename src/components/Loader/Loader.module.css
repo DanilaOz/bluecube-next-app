@@ -1,0 +1,21 @@
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loaderDiv {
+    position: absolute;
+    left: 0;
+    top: 49px;
+    background-color: #F2F6FA;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loader {
+    animation: spin 1s infinite linear;
+}

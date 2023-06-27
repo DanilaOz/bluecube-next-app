@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        domains: ["static.detmir.st"],
-    }
-}
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/products",
+        permanent: true,
+      },
+    ];
+  },
+  images: {
+    domains: ["static.detmir.st"],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

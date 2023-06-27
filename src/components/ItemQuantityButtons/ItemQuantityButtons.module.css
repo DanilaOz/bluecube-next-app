@@ -1,0 +1,18 @@
+.group {
+  display: flex;
+  align-items: center;
+  background-color: var(--brand-light2-color);
+  width: max-content;
+  border-radius: 12px;
+}
+
+.count {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

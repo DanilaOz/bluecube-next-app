@@ -1,4 +1,18 @@
 .rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
     margin-top: 4px;
+    height: 16px;
+}
+
+.noReviews {
+    display: flex;
+    align-items: center;
+    height: 16px;
+}
+
+.fillColor path {
+    fill: #FABC22;
 }
 

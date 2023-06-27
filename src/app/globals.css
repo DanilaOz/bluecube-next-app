@@ -1,5 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
 :root {
-  --main-color: #0073E6; 
+  --main-color: #0073e6;
+  --brand-light1-color: #99c7f5;
+  --brand-light2-color: #e6f1fc;
 }
 
 * {
@@ -8,21 +12,110 @@
   box-sizing: border-box;
 }
 
-p, a {
+p,
+a {
   color: #172029;
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background-color: #F2F6FA;
+  background-color: #f2f6fa;
+}
+
+.main {
+  padding: 0px 32px;
 }
 
 .goods-container {
   margin: 0 auto;
   max-width: 1346px;
   margin-top: 24px;
-  margin-bottom: 24px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
 }
+
+.btn {
+  font-family: "Nunito", sans-serif;
+  margin: 8px 0px;
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  box-shadow: none;
+  background-color: var(--main-color);
+  width: 100%;
+  padding: 16px 0px;
+  text-transform: none;
+}
+
+.btn:hover {
+  background-color: #338FEB;
+  box-shadow: none;
+}
+
+.item-quantity-btn {
+  background-color: var(--brand-light2-color);
+  padding: 16px 0px;
+  border-radius: 12px;
+  min-width: 52px;
+}
+
+.item-quantity-btn:hover {
+  background-color: #CFE4FA;
+}
+
+.btn:active {
+  background-color: #265BB2;
+}
+
+.paginationStyles {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.paginationStyles .MuiButtonBase-root {
+  background-color: var(--brand-light2-color);
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  border-radius: 12px;
+}
+
+.paginationStyles .MuiPaginationItem-root {
+  color: var(--main-color);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paginationStyles .Mui-selected {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+.paginationStyles .Mui-selected:hover {
+  background-color: var(--main-color);
+}
+
+.MuiCardContent-root:last-child {
+  padding-bottom: 16px;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+

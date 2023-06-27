@@ -3,6 +3,8 @@
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    user-select: none;
+    height: 100%;
 }
 
 .circle {

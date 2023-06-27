@@ -1,0 +1,76 @@
+.info {
+  display: flex;
+  gap: 24px;
+  padding: 24px 24px;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.title {
+  font-size: 28px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.return {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.conditions {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+.returnDescription {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 8px;
+}
+
+.prices {
+  font-size: 12px;
+  line-height: 16px;
+  margin-top: 16px;
+  color: #808080;
+}
+
+.elementRight {
+  max-width: 346px;
+  word-wrap: break-word;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInRight 2.7s forwards;
+}
+
+.elementLeft {
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideInLeft 2.7s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
