@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import pageNumberReducer from './pageNumberSlice';
+import cartUpdateDataReducer, {loadCartState, saveCartState} from './features/dataCartUpdateSlice'
+
+const persistedState = loadCartState();
 
 export const store = configureStore({
     reducer: {
-        pageNumber: pageNumberReducer,
-    }
+        updateData: cartUpdateDataReducer,
+    },
+    preloadedState: persistedState,
 })
 
-export const AppDispatch = store.getState();
-export const RootState = store.getState();
+store.subscribe(() => {
+    saveCartState(store.getState());
+})

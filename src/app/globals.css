@@ -63,12 +63,23 @@ body {
 .item-quantity-btn {
   background-color: var(--brand-light2-color);
   padding: 16px 0px;
-  border-radius: 12px;
   min-width: 52px;
+}
+
+.qty-btn-left {
+  border-radius: 12px 0px 0px 12px;
+}
+
+.qty-btn-right {
+  border-radius: 0px 12px 12px 0px;
 }
 
 .item-quantity-btn:hover {
   background-color: #CFE4FA;
+}
+
+.item-quantity-btn:disabled {
+  opacity: 0.5;
 }
 
 .btn:active {

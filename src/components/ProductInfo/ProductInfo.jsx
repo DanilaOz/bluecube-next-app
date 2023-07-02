@@ -3,7 +3,7 @@ import Image from "next/image";
 import Price from "../Price/Price";
 import UndoIcon from "../../../public/assets/images/undo.svg"
 import styles from "./ProductInfo.module.css";
-import MainButton from "../AddProductButton/AddProductButton";
+import AddProductButton from "../AddProductButton/AddProductButton";
 
 export default function ProductInfo({ data }) {
   return (
@@ -19,7 +19,7 @@ export default function ProductInfo({ data }) {
         <h1 className={styles.title}>{data.title}</h1>
         <RatingStars rating={data.rating} marginTop={8} />
         <Price price={data.price} fontSize={28} lineHeight={32} marginTop={24} />
-        <MainButton text={"Добавить в корзину"} />
+        <AddProductButton text={"Добавить в корзину"} id={data.id} />
         <div className={styles.return}>
             <Image src={UndoIcon} width={20} height={20} alt="undo" />
             <p className={styles.conditions}>Условия возврата</p>

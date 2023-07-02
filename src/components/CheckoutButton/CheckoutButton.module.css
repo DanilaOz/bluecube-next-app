@@ -1,0 +1,9 @@
+.message {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    max-width: 512px;
+    word-wrap: break-word;
+    color: #ED2C19;
+}

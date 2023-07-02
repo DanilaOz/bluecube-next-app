@@ -7,12 +7,13 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { Pagination, PaginationItem } from "@mui/material";
-import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
-import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
+import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
+import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
 import PaginationProducts from "../PaginationProducts/PaginationProducts";
+import Orders from "../Orders/Orders";
 import Loader from "../Loader/Loader";
-import '../../app/globals.css'
+import "../../app/globals.css";
 
 const ThePagination = () => {
   const router = useRouter();
@@ -23,26 +24,36 @@ const ThePagination = () => {
   const [page, setPage] = useState(search ? parseInt(search) : 1);
   const [pageQty, setPageQty] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [mass, setMass] = useState([]);
+  // const [mass, setMass] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get(`${BASE_URL}${pathname}?page=${page}&limit=15`).then(({data}) => {  
-        setPageQty(Math.ceil(data.meta.total / 15))
-        setPage(search ? parseInt(search) : 1)
-        setResults(data.data)
-        setMass(data.data.map(item => item.id)) // Redux mass
+    axios
+      .get(`${BASE_URL}${pathname}?limit=15&page=${page}`, { withCredentials: true })
+      .then(({ data }) => {
+        setPageQty(Math.ceil(data.meta.total / 15));
+        setPage(search ? parseInt(search) : 1);
+        setResults(data.data);
+        // setMass(data.data.map(item => item.id)) // Redux mass
         setIsLoading(false);
-    })
+      });
   }, [page, search, pathname]);
 
-  if (mass) { // Redux
-    console.log(mass);
-  }
+  // if (mass) { // Redux
+  //   console.log(mass);
+  // }
 
   return (
     <>
-      {!isLoading ? <PaginationProducts results={results} /> : <Loader />}
+      {!isLoading ? (
+        pathname === "/products" ? (
+          <PaginationProducts results={results} />
+        ) : (
+          <Orders results={results} />
+        )
+      ) : (
+        <Loader />
+      )}
       {!!pageQty && !isLoading && (
         <Pagination
           count={pageQty}
@@ -58,7 +69,10 @@ const ThePagination = () => {
           }}
           renderItem={(item) => (
             <PaginationItem
-              slots={{ previous: ArrowBackRoundedIcon, next: ArrowForwardRoundedIcon }}
+              slots={{
+                previous: ArrowBackRoundedIcon,
+                next: ArrowForwardRoundedIcon,
+              }}
               {...item}
             />
           )}

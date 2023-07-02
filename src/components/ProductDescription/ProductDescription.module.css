@@ -27,10 +27,31 @@
   font-size: 20px;
   line-height: 24px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .formattedText {
   font-size: 16px;
   line-height: 20px;
   margin-top: 16px;
+}
+
+.description > p {
+  margin: 8px 0px;
+}
+
+.description > ul {
+  margin-left: 16px;
+}
+
+.description > ul > li {
+  padding: 4px 0px;
+}
+
+.description > h3, h4 {
+  margin: 8px 0px;
+}
+
+.description > strong {
+  margin-top: 8px;
 }
