@@ -60,6 +60,11 @@ body {
   box-shadow: none;
 }
 
+.btn:disabled {
+  background-color: var(--brand-light1-color);
+  color: white;
+}
+
 .item-quantity-btn {
   background-color: var(--brand-light2-color);
   padding: 16px 0px;
@@ -130,3 +135,11 @@ body {
   margin-top: 24px;
 }
 
+.orders-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}

@@ -12,7 +12,7 @@ import styles from "./ItemQuantityButtons.module.css";
 import "../../app/globals.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, updateCartItems, updateTotal } from "@/store/features/dataCartUpdateSlice";
+import { addToCart } from "@/store/features/dataCartUpdateSlice";
 import { updateCart } from "@/utils/apis";
 
 export default function ItemQuantityButtons({ id }) {
@@ -37,6 +37,7 @@ export default function ItemQuantityButtons({ id }) {
 
       if (cartData) {
         cartPostRequest();
+        console.log(cartData);
       }
 
     }, 500);

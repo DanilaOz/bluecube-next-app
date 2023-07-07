@@ -1,3 +1,5 @@
+import BackToPaginationPage from "@/components/BackToPaginationPage/BackToPaginationPage";
+import ButtonsForSwitchingProducts from "@/components/ButtonsForSwitchingProducts/ButtonsForSwitchingProducts";
 import ProductDescription from "@/components/ProductDescription/ProductDescription";
 import ProductInfo from "@/components/ProductInfo/ProductInfo";
 import { BASE_URL } from "@/utils/constants";
@@ -14,6 +16,8 @@ export default async function page({ params }) {
 
   return (
     <div className="product-container">
+      <ButtonsForSwitchingProducts id={params.id} />
+      <BackToPaginationPage id={params.id} />
       <ProductInfo data={data} />
       <ProductDescription data={data} />
     </div>

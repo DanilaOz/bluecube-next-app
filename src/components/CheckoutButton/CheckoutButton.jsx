@@ -4,11 +4,11 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "@/store/features/dataCartUpdateSlice";
-import styles from "./CheckoutButton.module.css";
 
 export default function CheckoutButton({ marginTop, marginBottom }) {
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.updateData.data);
+  const totalPrice = useSelector((state) => state.updateData.total);
 
   const style = {
     marginTop: `${marginTop}px`,
@@ -43,18 +43,11 @@ export default function CheckoutButton({ marginTop, marginBottom }) {
         className="btn"
         variant="contained"
         style={style}
-        disabled={isButtonDisabled}
+        disabled={isButtonDisabled || totalPrice > 10000}
         onClick={handleSubmitCart}
       >
         Оформить заказ
       </Button>
-      {isButtonDisabled && (
-        <p className={styles.message}>
-          Пожалуйста, проверьте количество единиц у каждого товара! Если оно
-          равно нулю - добавьте нужное количество единиц или удалите товар из
-          корзины.
-        </p>
-      )}
     </>
   );
 }

@@ -1,0 +1,65 @@
+.orderContainer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 24px 24px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+}
+
+.order {
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.orderIdGoods {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.orderId {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.goods {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+}
+
+.product {
+    border-radius: 4px;
+}
+
+.orderSumDateInfo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.orderSumDateInfoStatic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+}
+
+.orderSumDateInfoDynamic {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.sum::after {
+    content:" \20BD";
+}

@@ -7,49 +7,50 @@ import { useRouter } from "next/navigation";
 import { usePathname } from "next/navigation";
 import { useSearchParams } from "next/navigation";
 import { Pagination, PaginationItem } from "@mui/material";
+import { useDispatch } from "react-redux";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 
 import PaginationProducts from "../PaginationProducts/PaginationProducts";
+import { updatePaginationPageNumber } from "@/store/features/paginationPageNumber";
 import Orders from "../Orders/Orders";
 import Loader from "../Loader/Loader";
 import "../../app/globals.css";
 
 const ThePagination = () => {
+  const dispatch = useDispatch();
   const router = useRouter();
   const searchParams = useSearchParams();
   const search = searchParams.get("page");
+  const source = searchParams.get("source");
   const pathname = usePathname();
-  const [results, setResults] = useState([]);
-  const [page, setPage] = useState(search ? parseInt(search) : 1);
+  const [requestData, setRequestData] = useState([]);
+  const [page, setPage] = useState(search && !source ? parseInt(search) : 1);
   const [pageQty, setPageQty] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  // const [mass, setMass] = useState([]);
 
   useEffect(() => {
     setIsLoading(true);
+    const limit = pathname === "/products" ? 15 : 8;
     axios
-      .get(`${BASE_URL}${pathname}?limit=15&page=${page}`, { withCredentials: true })
+      .get(`${BASE_URL}${pathname}?page=${page}&limit=${limit}`, { withCredentials: true })
       .then(({ data }) => {
-        setPageQty(Math.ceil(data.meta.total / 15));
+        console.log(data);
+        setPageQty(Math.ceil(data.meta.total / limit));
         setPage(search ? parseInt(search) : 1);
-        setResults(data.data);
-        // setMass(data.data.map(item => item.id)) // Redux mass
+        setRequestData(data.data);
+        dispatch(updatePaginationPageNumber(search ? parseInt(search) : 1));
         setIsLoading(false);
       });
   }, [page, search, pathname]);
-
-  // if (mass) { // Redux
-  //   console.log(mass);
-  // }
 
   return (
     <>
       {!isLoading ? (
         pathname === "/products" ? (
-          <PaginationProducts results={results} />
+          <PaginationProducts requestData={requestData} />
         ) : (
-          <Orders results={results} />
+          <Orders requestData={requestData} />
         )
       ) : (
         <Loader />

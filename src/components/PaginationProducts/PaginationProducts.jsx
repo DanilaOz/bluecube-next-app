@@ -5,17 +5,17 @@ import ProductCard from "../Product/ProductCard";
 import styles from "./PaginationProducts.module.css";
 import Loader from "../Loader/Loader";
 
-const PaginationProducts = ({ results }) => {
+const PaginationProducts = ({ requestData }) => {
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {
-    if (results) setShowResults(true);
-  }, [results]);
+    if (requestData) setShowResults(true);
+  }, [requestData]);
 
   return (
     <div className={styles.products}>
-      {showResults ? (results &&
-        results.map((product, index) => {
+      {showResults ? (requestData &&
+        requestData.map((product, index) => {
           return <ProductCard key={index} product={product} />;
         })) : (<Loader />)}
     </div>

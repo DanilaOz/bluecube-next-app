@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
   return (
     <Card sx={{ maxWidth: 250}} className={styles.card}>
       <Link href={`products/${product.id}`}>
-        <Image src={product.picture} alt="card-picture" width={250} height={250} className={styles.picture} priority />
+        <Image src={product.picture} alt="card-picture" width={250} height={250} className={styles.picture} />
         <CardContent className={styles.content}>
           <p className={styles.title}>{product.title}</p>
           <RatingStars rating={product.rating} />

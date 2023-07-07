@@ -16,7 +16,6 @@ export default function Cart({
   const cartItems = useSelector((state) => state.updateData.cartItems);
   const cartData = useSelector((state) => state.updateData.data);
   const totalPrice = useSelector((state) => state.updateData.total);
-  console.log(totalPrice);
 
   useEffect(() => {
     dispatch(updateTotal())
