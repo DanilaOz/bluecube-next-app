@@ -5,7 +5,7 @@ import { BASE_URL } from "../../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "@/store/features/dataCartUpdateSlice";
 
-export default function CheckoutButton({ marginTop, marginBottom }) {
+export default function CheckoutButton({ marginTop, marginBottom, setIsOrderProcessed }) {
   const dispatch = useDispatch();
   const cartData = useSelector((state) => state.updateData.data);
   const totalPrice = useSelector((state) => state.updateData.total);
@@ -23,14 +23,13 @@ export default function CheckoutButton({ marginTop, marginBottom }) {
         },
         withCredentials: true,
       })
-      .then((response) => {
-        console.log(response.data);
+      .then(() => {
+        dispatch(clearCart());
+        setIsOrderProcessed(true);
       })
       .catch((error) => {
         console.error(error);
       });
-
-    dispatch(clearCart());
   };
 
   // Проверка на наличие товаров с quantity = 0. Если есть, то оформить заказ нельзя

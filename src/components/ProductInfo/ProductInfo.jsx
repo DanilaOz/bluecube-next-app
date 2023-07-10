@@ -18,7 +18,7 @@ export default function ProductInfo({ data }) {
       <div className={styles.elementRight}>
         <h1 className={styles.title}>{data.title}</h1>
         <RatingStars rating={data.rating} marginTop={8} />
-        <Price price={data.price} fontSize={28} lineHeight={32} marginTop={24} />
+        <Price price={data.price} fontSize={28} lineHeight={32} marginTop={24} fontFamily={"Circe Rounded"} fontWeight={800} />
         <AddProductButton text={"Добавить в корзину"} id={data.id} />
         <div className={styles.return}>
             <Image src={UndoIcon} width={20} height={20} alt="undo" />

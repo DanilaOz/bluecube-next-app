@@ -28,9 +28,11 @@ export default function BackToPaginationPage({ id }) {
       ? router.push(
           pagePaginationNumber === 1 ? `/products` : `/products?page=${search}`
         )
+      : source === "cart"
+      ? router.back()
       : router.push(
-        pagePaginationNumber === 1 ? `/orders` : `/orders?page=${search}`
-      )
+          pagePaginationNumber === 1 ? `/orders` : `/orders?page=${search}`
+        );
   };
 
   return (

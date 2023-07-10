@@ -11,6 +11,7 @@ export default function Cart({
   handleShowCart,
   handleCloseCart,
   setIsCartVisible,
+  setIsOrderProcessed,
 }) {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.updateData.cartItems);
@@ -50,6 +51,7 @@ export default function Cart({
           <CheckoutButton
             marginTop={16}
             marginBottom={0}
+            setIsOrderProcessed={setIsOrderProcessed}
           />
         </>
       )}

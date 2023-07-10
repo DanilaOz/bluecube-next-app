@@ -1,5 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 
+@font-face {
+  font-family: 'Circe Rounded';
+  src: url(../../public/assets/fonts/CirceRounded/CirceRounded-AltBold.woff);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Circe Rounded';
+  src: url(../../public/assets/fonts/CirceRounded/CirceRounded-Regular3.woff);
+  font-weight: 800;
+}
+
 :root {
   --main-color: #0073e6;
   --brand-light1-color: #99c7f5;
@@ -142,4 +154,15 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 24px;
+}
+
+.MuiAlert-message {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.MuiAlert-icon {
+  margin-top: 3px;
 }

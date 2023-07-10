@@ -26,7 +26,10 @@ export default function CartItem({ product }) {
 
   return (
     <div className={styles.product}>
-      <Link href={`/products/${product.product.id}`} className={styles.productLink}>
+      <Link
+        href={`/products/${product.product.id}?source=cart`}
+        className={styles.productLink}
+      >
         <Image
           src={product.product.picture}
           alt="product-picture"
@@ -36,9 +39,7 @@ export default function CartItem({ product }) {
         />
         <p className={styles.title}>{product.product.title}</p>
       </Link>
-      <ItemQuantityButtons
-        id={product.product.id}
-      />
+      <ItemQuantityButtons id={product.product.id} />
       {prod?.quantity > 0 ? (
         <div className={styles.prices}>
           <p

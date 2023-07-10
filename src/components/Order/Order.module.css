@@ -10,12 +10,26 @@
 }
 
 .order {
-    width: 120px;
+    width: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 4px;
+}
+
+.repeatOrder {
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--main-color);
+    transition: all 0.3s ease-out;
+}
+
+.repeatOrder:hover {
+    color: #fff;
+    background-color: var(--main-color);
+    border-radius: 8px;
+    padding: 8px 8px;
 }
 
 .orderIdGoods {
@@ -37,7 +51,11 @@
 }
 
 .product {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     border-radius: 4px;
+    position: relative;
 }
 
 .orderSumDateInfo {
@@ -62,4 +80,31 @@
 
 .sum::after {
     content:" \20BD";
+}
+
+.productCart {
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.15);
+    width: max-content;
+    padding: 24px 24px;
+    z-index: 1;
+    border-radius: 16px;
+}
+
+.productCartTitle {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    max-width: 240px;
+}
+
+.productCartTitle:hover {
+    color: var(--main-color)
 }
