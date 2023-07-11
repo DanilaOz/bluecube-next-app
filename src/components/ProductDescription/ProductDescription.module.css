@@ -55,3 +55,9 @@
 .description > strong {
   margin-top: 8px;
 }
+
+@media screen and (max-width: 1070px) {
+  .description {
+    margin-bottom: 40px;
+  }
+}

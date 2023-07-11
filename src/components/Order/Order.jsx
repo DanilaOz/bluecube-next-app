@@ -93,7 +93,7 @@ export default function Order({ order }) {
                     width={48}
                     height={48}
                   />
-                  <p style={{ color: "#808080" }}>{product.quantity}x</p>
+                  {/* <p style={{ color: "#808080" }}>{product.quantity}x</p> */}
                   {isProductCartVisible &&
                     activeProductId === product.product.id && (
                       <div className={styles.productCart}>

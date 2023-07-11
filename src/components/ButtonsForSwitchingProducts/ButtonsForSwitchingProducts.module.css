@@ -30,3 +30,14 @@
 .btn:disabled {
   opacity: 0.5;
 }
+
+@media screen and (max-width: 1070px) {
+  .buttonsContainer {
+      display: none;
+      position: static;
+      width: 100%;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 24px;
+  } 
+}

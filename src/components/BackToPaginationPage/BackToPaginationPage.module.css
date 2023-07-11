@@ -1,13 +1,25 @@
 .back {
-    position: absolute;
-    left: 32px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 4px;
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 700;
-    color: var(--main-color);
-    cursor: pointer;
+  position: absolute;
+  left: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: var(--main-color);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1070px) {
+  .back {
+    position: static;
+    background-color: var(--brand-light2-color);
+    max-width: 792px;
+    width: 100%;
+    justify-content: center;
+    padding: 12px 0px;
+    border-radius: 16px;
+  }
 }

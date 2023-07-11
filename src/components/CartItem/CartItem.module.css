@@ -81,3 +81,23 @@
     display: flex;
     flex-direction: column;
 }
+
+@media screen and (max-width: 603px) {
+    .product {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }    
+
+    .price {
+        text-align: left;
+    }
+
+    .priceForOne {
+        text-align: left;;
+    }
+
+    .deteteItem {
+        justify-content: flex-start;
+    }
+}

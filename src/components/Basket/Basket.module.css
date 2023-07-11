@@ -7,6 +7,10 @@
   height: 100%;
 }
 
+.basketTitle:active {
+  color: var(--main-color);
+}
+
 .circle {
   display: none;
   background-color: var(--main-color);
@@ -20,6 +24,7 @@
   position: fixed;
   bottom: 24px;
   right: 32px;
+  z-index: 1;
   background-color: #bdecb6;
   border: 1px solid #44944A;
   border-radius: 8px;

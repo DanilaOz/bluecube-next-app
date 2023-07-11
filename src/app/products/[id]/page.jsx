@@ -16,10 +16,10 @@ export default async function page({ params }) {
 
   return (
     <div className="product-container">
-      <ButtonsForSwitchingProducts id={params.id} />
       <BackToPaginationPage id={params.id} />
       <ProductInfo data={data} />
       <ProductDescription data={data} />
+      <ButtonsForSwitchingProducts id={params.id} />
     </div>
   );
 }

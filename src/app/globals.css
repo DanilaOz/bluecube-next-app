@@ -166,3 +166,32 @@ body {
 .MuiAlert-icon {
   margin-top: 3px;
 }
+
+@media screen and (max-width: 586px) {
+  .paginationStyles .MuiButtonBase-root {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+  
+  .paginationStyles .MuiPaginationItem-root {
+    min-width: 28px;
+    width: 8vw;
+    height: 32px;
+    transition: width 0.3s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  .main {
+      padding: 0px 22px;
+  } 
+}
+
+
+@media only screen and (min-width: 280px) and (max-width: 420px) {
+  .item-quantity-btn {
+    min-width: 78px;
+  }
+}
