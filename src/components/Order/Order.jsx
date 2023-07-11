@@ -15,6 +15,8 @@ export default function Order({ order }) {
   const dispatch = useDispatch();
   const [randomOrderNumber, setRandomOrderNumber] = useState(null);
   const [reorderData, setReorderData] = useState([]);
+  const [isProductCartVisible, setIsProductCartVisible] = useState(false);
+  const [activeProductId, setActiveProductId] = useState(null);
 
   const cartData = useSelector((state) => state.updateData.data);
   const pagePaginationNumber = useSelector(
@@ -70,9 +72,6 @@ export default function Order({ order }) {
           </div>
           <div className={styles.goods}>
             {order.map((product, i) => {
-              const [isProductCartVisible, setIsProductCartVisible] =
-                useState(false);
-              const [activeProductId, setActiveProductId] = useState(null);
               return (
                 <Link
                   href={`/products/${product.product.id}?source=orders&page=${pagePaginationNumber}`}
