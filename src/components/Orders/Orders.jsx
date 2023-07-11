@@ -7,8 +7,6 @@ import styles from './Orders.module.css'
 
 export default function Orders({requestData}) {
 
-  console.log(requestData);
-
   const [showResults, setShowResults] = useState(false);
 
   useEffect(() => {

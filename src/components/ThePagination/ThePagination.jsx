@@ -35,7 +35,6 @@ const ThePagination = () => {
     axios
       .get(`${BASE_URL}${pathname}?page=${page}&limit=${limit}`, { withCredentials: true })
       .then(({ data }) => {
-        console.log(data);
         setPageQty(Math.ceil(data.meta.total / limit));
         setPage(search ? parseInt(search) : 1);
         setRequestData(data.data);

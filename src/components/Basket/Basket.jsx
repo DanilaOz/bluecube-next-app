@@ -39,7 +39,6 @@ const Basket = () => {
         withCredentials: true,
       });
       const cartData = response.data;
-      console.log(cartData);
       dispatch(updateCartItems(cartData));
     } catch (error) {
       console.log(error);

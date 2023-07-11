@@ -37,7 +37,6 @@ export default function ItemQuantityButtons({ id }) {
 
       if (cartData) {
         cartPostRequest();
-        console.log(cartData);
       }
 
     }, 500);
